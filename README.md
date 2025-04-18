@@ -9,7 +9,6 @@ Bu proje, notları yönetmek için geliştirilmiş bir REST API'dir. Spring Boot
 - **Spring Data JPA**
 - **H2 Database**
 - **Lombok**
-- **MapStruct**
 - **Spring Validation**
 - **Spring Web**
 - **Spring Test**
@@ -115,9 +114,9 @@ Testleri çalıştırmak için:
 ## 🤝 Katkıda Bulunma
 
 1. Fork'layın
-2. Feature branch oluşturun (`git checkout -b feature/amazing-feature`)
-3. Değişikliklerinizi commit edin (`git commit -m 'Add some amazing feature'`)
-4. Branch'inizi push edin (`git push origin feature/amazing-feature`)
+2. Feature branch oluşturun 
+3. Değişikliklerinizi commit edin 
+4. Branch'inizi push edin
 5. Pull Request oluşturun
 
 ## 📄 Lisans

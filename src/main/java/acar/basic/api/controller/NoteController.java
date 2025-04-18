@@ -3,7 +3,6 @@ package acar.basic.api.controller;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import acar.basic.api.model.dto.NoteDto;
 import acar.basic.api.service.interfaces.NoteService;
 import jakarta.validation.Valid;
