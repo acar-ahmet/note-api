@@ -1,7 +1,7 @@
 package acar.basic.api.repository;
 
 import acar.basic.api.model.entity.Note;
-import io.micrometer.common.lang.NonNull;
+import org.springframework.lang.NonNull;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -28,8 +28,6 @@ public interface NoteRepository extends JpaRepository<Note, Long> {
     // Find notes by title and date
     List<Note> findByTitleAndDate(String title, LocalDate date);
     
-    // Delete notes by date
-    void deleteByDate(LocalDate date);
     
     // Delete note by ID
     @Override

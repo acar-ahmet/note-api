@@ -38,18 +38,33 @@ public class NoteController {
         List<NoteDto> notes = noteService.getAllNotes();
         return ResponseEntity.ok(notes);
     }
-
+    // Açıklamaya göre not getirme (GET)
+    @GetMapping("/description/{description}")
+    public ResponseEntity<List<NoteDto>> getNotesByDescription(@PathVariable String description) {
+        List<NoteDto> notes = noteService.getNotesByDescription(description);
+        return ResponseEntity.ok(notes);
+    }
     // Başlığa göre not getirme (GET)
     @GetMapping("/title/{title}")
     public ResponseEntity<List<NoteDto>> getNotesByTitle(@PathVariable String title) {
         List<NoteDto> notes = noteService.getNotesByTitle(title);
         return ResponseEntity.ok(notes);
     }
-
+    @GetMapping("/title/{title}/date/{date}")
+    public ResponseEntity<List<NoteDto>> getNotesByTitleAndDate(@PathVariable String title,@PathVariable String date) {
+        System.out.println(title+date);
+        List<NoteDto> notes = noteService.getNotesByTitleAndDate(title,date);
+        return ResponseEntity.ok(notes);
+    }
     // Tarihe göre not getirme (GET)
     @GetMapping("/date/{date}")
     public ResponseEntity<List<NoteDto>> getNotesByDate(@PathVariable String date) {
         List<NoteDto> notes = noteService.getNotesByDate(date);
+        return ResponseEntity.ok(notes);
+    }
+    @GetMapping("/date/{startdate}/{enddate}")
+    public ResponseEntity<List<NoteDto>> getNotesByBetweenDate(@PathVariable String startdate,@PathVariable String enddate) {
+        List<NoteDto> notes = noteService.getNotesByDateBetween(startdate,enddate);
         return ResponseEntity.ok(notes);
     }
 

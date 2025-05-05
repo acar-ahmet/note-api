@@ -19,6 +19,10 @@ public class GlobalExceptionHandler {
     public ResponseEntity<String> handleNoteNotFoundException(NoteNotFoundException ex, WebRequest request) {
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
     }
+    @ExceptionHandler(InvalidIdException.class)
+    public ResponseEntity<String> handleNoteInvalidIdException(InvalidIdException ex, WebRequest request) {
+        return new ResponseEntity<>("Get Support from Software Team! "+ex.getMessage(), HttpStatus.BAD_REQUEST);
+    }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<Map<String, String>> handleValidationExceptions(MethodArgumentNotValidException ex) {

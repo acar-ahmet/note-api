@@ -10,8 +10,11 @@ public interface NoteService {
     // Read
     NoteDto getNoteById(Long id);
     List<NoteDto> getAllNotes();
+    List<NoteDto> getNotesByDescription(String description);
     List<NoteDto> getNotesByTitle(String title);
+    List<NoteDto> getNotesByTitleAndDate(String title,String dateText);
     List<NoteDto> getNotesByDate(String date);
+    List<NoteDto> getNotesByDateBetween(String startdate,String enddate);
     
     // Update
     NoteDto updateNote(Long id, NoteDto noteDto);

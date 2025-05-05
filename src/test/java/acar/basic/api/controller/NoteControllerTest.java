@@ -32,18 +32,18 @@ public class NoteControllerTest {
     @Test
     void createNote_ValidInput_ReturnsCreated() throws Exception {
         // Given
-        NoteDto inputDto = NoteDto.builder()
-                .title("Test Note")
-                .date(LocalDate.now())
-                .description("Test Description")
-                .build();
+        NoteDto inputDto = new NoteDto();
+        inputDto.setTitle("Test Note");
+        inputDto.setDate(LocalDate.now());
+        inputDto.setDescription("Test Description");
+        
 
-        NoteDto savedDto = NoteDto.builder()
-                .id(1L)
-                .title("Test Note")
-                .date(LocalDate.now())
-                .description("Test Description")
-                .build();
+        NoteDto savedDto = new NoteDto();
+        savedDto.setId(1L);
+        savedDto.setTitle("Test Note");
+        savedDto.setDate(LocalDate.now());
+        savedDto.setDescription("Test Description");
+              
 
         when(noteService.createNote(any(NoteDto.class))).thenReturn(savedDto);
 
@@ -60,11 +60,10 @@ public class NoteControllerTest {
     @Test
     void createNote_EmptyTitle_ReturnsBadRequest() throws Exception {
         // Given
-        NoteDto inputDto = NoteDto.builder()
-                .title("")
-                .date(LocalDate.now())
-                .description("Test Description")
-                .build();
+        NoteDto inputDto = new NoteDto();
+        inputDto.setTitle("");
+        inputDto.setDate(LocalDate.now());
+        inputDto.setDescription("Test Description");
 
         // When & Then
         mockMvc.perform(post("/notes")
@@ -76,11 +75,10 @@ public class NoteControllerTest {
     @Test
     void createNote_NullDate_ReturnsBadRequest() throws Exception {
         // Given
-        NoteDto inputDto = NoteDto.builder()
-                .title("Test Note")
-                .date(null)
-                .description("Test Description")
-                .build();
+        NoteDto inputDto = new NoteDto();
+                inputDto.setTitle("Test Note");
+                inputDto.setDate(null);
+                inputDto.setDescription("Test Description");
 
         // When & Then
         mockMvc.perform(post("/notes")
